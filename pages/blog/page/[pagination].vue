@@ -6,13 +6,13 @@ useHead({
     ]
 })
 const ITEM_PER_PAGE = 5
-
+const currentPage = useRoute().params.pagination
 const { data } = await useAsyncData('blogQuery', () =>
     queryContent('/blog')
         .sort({ id: -1 })
         .limit(ITEM_PER_PAGE)
+        .skip(ITEM_PER_PAGE * (currentPage - 1))
         .find())
-
 const allBlogs = await queryContent('/blog').find()
 const pageCount = Math.ceil(allBlogs.length / ITEM_PER_PAGE)
 </script>
