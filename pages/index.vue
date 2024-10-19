@@ -32,6 +32,12 @@
 </template>
 
 <script setup lang="tsx">
+useHead({
+    title: 'Nuxt Portfolio',
+    meta: [
+        { name: 'description', content: 'Nuxt Portfolio' }
+    ]
+})
 </script>
 
 <style scoped>

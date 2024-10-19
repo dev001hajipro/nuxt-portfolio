@@ -19,6 +19,12 @@
 </template>
 
 <script setup lang="tsx">
+useHead({
+    title: 'Blog',
+    meta: [
+        { name: 'description', content: 'Blog' }
+    ]
+})
 const { data } = await useAsyncData('blogQuery', () => queryContent('/blog').sort({ id: -1 }).find())
 </script>
 

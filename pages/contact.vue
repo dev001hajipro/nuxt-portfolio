@@ -17,6 +17,12 @@
 </template>
 
 <script setup lang="tsx">
+useHead({
+    title: 'コンタクト',
+    meta: [
+        { name: 'description', content: 'コンタクトページ' }
+    ]
+})
 </script>
 
 <style scoped>
